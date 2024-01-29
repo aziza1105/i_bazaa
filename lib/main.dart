@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-
-import 'package:path_provider/path_provider.dart';
-
 import 'core/injector/set_up_locator.dart';
 import 'core/injector/storage_repository.dart';
 

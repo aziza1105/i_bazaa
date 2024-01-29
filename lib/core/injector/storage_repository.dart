@@ -5,10 +5,10 @@ class HiveSingleton {
   static HiveSingleton? _instance;
   static late Box _box;
 
-  // Private constructor
+
   HiveSingleton._();
 
-  // Getter for singleton instance
+
   static Future<HiveSingleton> getInstance() async {
     if (_instance == null) {
       _instance = HiveSingleton._();
@@ -21,8 +21,8 @@ class HiveSingleton {
     final appDocumentDir =
         await path_provider.getApplicationDocumentsDirectory();
     Hive.init(appDocumentDir.path);
-    await Hive.openBox('gulrux');
-    _box = Hive.box('gulrux');
+    await Hive.openBox('aziza');
+    _box = Hive.box('aziza');
   }
 
   static bool getAutStatus() {

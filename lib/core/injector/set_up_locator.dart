@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 Box? box;
 
 Future<void> initHive() async {
-  const boxName = 'gulrux';
+  const boxName = 'aziza';
   Directory directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
   box = await Hive.openBox<dynamic>(boxName);
