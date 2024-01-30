@@ -20,10 +20,10 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  final mailTextEditingController = TextEditingController();
+  final phoneTextEditingController = TextEditingController();
   final passwordTextEditingController = TextEditingController();
 
-  final mailFocusNode = FocusNode();
+  final phoneFocusNode = FocusNode();
   final passwordFocusNode = FocusNode();
 
   final textFieldContentStyle = const TextStyle(
@@ -79,9 +79,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   void dispose() {
-    mailTextEditingController.dispose();
+    phoneTextEditingController.dispose();
     passwordTextEditingController.dispose();
-    mailFocusNode.dispose();
+    phoneFocusNode.dispose();
     passwordFocusNode.dispose();
     super.dispose();
   }
@@ -143,8 +143,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             TextField(
               style: textFieldContentStyle,
               cursorColor: Colors.black,
-              focusNode: mailFocusNode,
-              controller: mailTextEditingController,
+              focusNode: phoneFocusNode,
+              controller: phoneTextEditingController,
               decoration: decoration(hintText: "To'liq ismingizni kiriting" ),
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,

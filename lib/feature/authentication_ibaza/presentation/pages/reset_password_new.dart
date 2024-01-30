@@ -18,10 +18,10 @@ class ResetPasswordNew extends StatefulWidget {
 }
 
 class _ResetPasswordNewState extends State<ResetPasswordNew> {
-  final mailTextEditingController = TextEditingController();
+  final phoneTextEditingController = TextEditingController();
   final passwordTextEditingController = TextEditingController();
 
-  final mailFocusNode = FocusNode();
+  final phoneFocusNode = FocusNode();
   final passwordFocusNode = FocusNode();
 
   final textFieldContentStyle = const TextStyle(
@@ -77,9 +77,9 @@ class _ResetPasswordNewState extends State<ResetPasswordNew> {
 
   @override
   void dispose() {
-    mailTextEditingController.dispose();
+    phoneTextEditingController.dispose();
     passwordTextEditingController.dispose();
-    mailFocusNode.dispose();
+    phoneFocusNode.dispose();
     passwordFocusNode.dispose();
     super.dispose();
   }
@@ -141,8 +141,8 @@ class _ResetPasswordNewState extends State<ResetPasswordNew> {
             TextField(
               style: textFieldContentStyle,
               cursorColor: Colors.black,
-              focusNode: mailFocusNode,
-              controller: mailTextEditingController,
+              focusNode: phoneFocusNode,
+              controller: phoneTextEditingController,
               decoration: decoration(hintText: 'Parolni kiriting' ),
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,
@@ -177,7 +177,7 @@ class _ResetPasswordNewState extends State<ResetPasswordNew> {
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,
               onEditingComplete: () {
-                mailFocusNode.requestFocus();
+                phoneFocusNode.requestFocus();
               },
             ),
 
