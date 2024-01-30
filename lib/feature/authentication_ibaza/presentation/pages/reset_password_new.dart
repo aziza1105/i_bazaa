@@ -9,6 +9,9 @@ import '../../../../core/widgets/w_button.dart';
 
 
 class ResetPasswordNew extends StatefulWidget {
+  static Route route() => MaterialPageRoute(
+    builder: (_) => const ResetPasswordNew(),
+  );
 
 
   const ResetPasswordNew({super.key});
@@ -184,7 +187,9 @@ class _ResetPasswordNewState extends State<ResetPasswordNew> {
             const Gap(20),
 
             WButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed("/login");
+              },
               text: "Parolni qayta tiklash",
             ),
 

@@ -215,7 +215,7 @@ class _CreatePasswordState extends State<CreatePassword> {
             ),
             const Gap(20),
 
-            Align(
+            const Align(
               alignment: Alignment.center,
               child: Text(
                 'Ro‘yxatdan o‘tish bilan siz Foydalanish qoidalari va maxfiylik siyosatiga roziligingizni bildirasiz',
@@ -231,7 +231,7 @@ class _CreatePasswordState extends State<CreatePassword> {
             const Gap(20),
             WButton(
               onTap: () {
-                Navigator.of(context).pushNamed("/resetPasswordNew");
+                Navigator.of(context).pushNamed("/login");
               },
               text: "Ro'yxatdan o'tish",
             ),

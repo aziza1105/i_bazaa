@@ -9,7 +9,11 @@ import '../../../../assets/constants/icons.dart';
 import '../../../../core/widgets/w_button.dart';
 
 class ResetPassword extends StatefulWidget {
+  static Route route() => MaterialPageRoute(
+      builder: (_) => const ResetPassword(),
+  );
   const ResetPassword({super.key});
+
 
   @override
   State<ResetPassword> createState() => _ResetPasswordState();
@@ -145,7 +149,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                           },
                           onCompleted: (value) {
                             if (isPinPutValid) {
-                              Navigator.of(context).pushNamed("/CreatePassword");
+
                             }
                           },
                         ),
@@ -177,7 +181,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                         ),
                         const Gap(24),
                         WButton(
-                          onTap: () {},
+                          onTap: () {
+                           Navigator.of(context).pushNamed("/resetPasswordNew");
+                          },
                           text: 'Davom etish',
                         ),
                       ],

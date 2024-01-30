@@ -206,7 +206,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             const Gap(16),
             WButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed("/login");
+              },
               text: "Kirish",
             ),
 

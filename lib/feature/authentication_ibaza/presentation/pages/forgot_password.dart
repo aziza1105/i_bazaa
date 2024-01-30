@@ -154,7 +154,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             const Gap(20),
 
             WButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed("/resetPassword");
+              },
               text: "Davom etish",
             ),
 

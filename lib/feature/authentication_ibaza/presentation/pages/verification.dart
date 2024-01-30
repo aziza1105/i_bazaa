@@ -181,7 +181,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 onTap: () {
                   Navigator.of(context).pushNamed("/createPassword");
                 },
-                text: 'Davom etish',
+                text: "Davom etish",
               ),
             ],
           ),
