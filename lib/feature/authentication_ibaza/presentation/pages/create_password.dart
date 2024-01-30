@@ -230,7 +230,9 @@ class _CreatePasswordState extends State<CreatePassword> {
             ),
             const Gap(20),
             WButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed("/resetPasswordNew");
+              },
               text: "Ro'yxatdan o'tish",
             ),
 

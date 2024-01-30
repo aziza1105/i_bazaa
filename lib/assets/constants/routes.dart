@@ -56,33 +56,6 @@ class RouteGenerator {
     );
 
 
-
-
-      // case '/login':
-      //   return MaterialPageRoute(
-      //     builder: (context) =>  const LoginScreen(),
-      //   );
-      // case '/':
-      //   return MaterialPageRoute(
-      //     builder: (context) => const SplashScreen(),
-      //   );
-      //
-      // case '/survey':
-      //   return MaterialPageRoute(
-      //     builder: (context) => const SurveyPage(),
-      //   );
-
-
-
-      // case '/home':
-      //   return MaterialPageRoute(
-      //     builder: (context) =>  MyHomePage(),
-      //   );
-      //
-      // default:
-      //   return MaterialPageRoute(
-      //     builder: (context) => const ErrorPage(),
-      //   );
     }
   }
 }

@@ -196,12 +196,15 @@ class _LoginScreenState extends State<LoginScreen> {
               keyboardType: TextInputType.visiblePassword,
               obscureText: isObscure,
             ),
-           const Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Align(
+
+              Align(
                 alignment: Alignment.centerRight,
-                child: Text(
-                  'unutdingizmi',
+               child: GestureDetector(
+                 onTap: () {
+                   Navigator.of(context).pushNamed("/forgotPassword");
+                 },
+                child: const Text(
+                  'Unutdingizmi?',
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Color(0xFF9E9EA5),
@@ -212,7 +215,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-            ),
+             ),
+
             const Gap(20),
 
             WButton(
@@ -235,7 +239,9 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             const Gap(16),
             WButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed("/registerScreen");
+              },
               text: "Ro'yxatdan o'tish",
             ),
 

@@ -178,7 +178,9 @@ class _VerificationPageState extends State<VerificationPage> {
               ),
               const Gap(24),
               WButton(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushNamed("/createPassword");
+                },
                 text: 'Davom etish',
               ),
             ],

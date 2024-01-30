@@ -185,7 +185,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const Gap(20),
 
             WButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed("/verificationPage");
+              },
               text: 'Davom etish',
             ),
             const Gap(253),
