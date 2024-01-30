@@ -25,9 +25,9 @@ class _ResetPasswordNewState extends State<ResetPasswordNew> {
   final passwordFocusNode = FocusNode();
 
   final textFieldContentStyle = const TextStyle(
-    color: hintTextColor,
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
+    color: Colors.black,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
   );
 
   bool isObscure = true;

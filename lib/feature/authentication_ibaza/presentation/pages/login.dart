@@ -27,9 +27,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final passwordFocusNode = FocusNode();
 
   final textFieldContentStyle = const TextStyle(
-    color: hintTextColor,
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
+    color: Colors.black,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
   );
 
   bool isObscure = true;
@@ -219,7 +219,7 @@ class _LoginScreenState extends State<LoginScreen> {
               onTap: () {},
               text: 'Kirish',
             ),
-            const Gap(253),
+            const Gap(200),
             Align(
               alignment: Alignment.center,
               child: Text(
