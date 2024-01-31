@@ -6,14 +6,14 @@ import 'package:hive/hive.dart';
 import 'package:i_bazaa/assets/constants/colors.dart';
 import 'package:image_picker/image_picker.dart';
 
-class ProfileEditScreen extends StatefulWidget {
-  const ProfileEditScreen({super.key});
+class EditingProfileScreen extends StatefulWidget {
+  const EditingProfileScreen({super.key});
 
   @override
-  State<ProfileEditScreen> createState() => _ProfileEditScreenState();
+  State<EditingProfileScreen> createState() => _EditingProfileScreenState();
 }
 
-class _ProfileEditScreenState extends State<ProfileEditScreen> {
+class _EditingProfileScreenState extends State<EditingProfileScreen> {
   File? avatar;
   final _name = Hive.box("name");
   final _location = Hive.box("location");
@@ -60,18 +60,16 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
     _location.put(1, _locationController.text);
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: grey_background,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: dark_grey,
         title: Padding(
 
           padding: const EdgeInsets.only(left: 75,right: 90),
-          child: Text(
+          child: const Text(
             "Profilni tahrirlash",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: black),
           ),
@@ -86,7 +84,6 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
             Stack(
                 alignment: Alignment.center,
                 children: [
-
                   SizedBox(
                     height: 370,
                     width: double.infinity,
@@ -102,35 +99,29 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                         pickerAvatar();
                       },
                       child: Container(
-                        height: 70,
-                        width: 70,
+                        height: 72,
+                        width: 72,
                         clipBehavior: Clip.hardEdge,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.transparent,
                           border: Border.all(width: 1, color: Colors.grey),
                         ),
-                        child: avatar == null
-                            ? const Icon(Icons.person, size: 60, color: Colors.grey)
-                            : Image.file(avatar!, fit: BoxFit.cover,),
+                        child: avatar == null ? const Icon(Icons.person,
+                            size: 60, color: Colors.grey) : Image.file(avatar!,
+                          fit: BoxFit.cover,),
                       ),
                     ),
                   ),
-
-                  Positioned(
-                    top: 115,
-                    left: 16,
-                    right: 16,
+                  Positioned(top: 115, left: 16, right: 16,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
-                        Text('F.I.Sh',
+                       const Text('F.I.Sh',
                           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                         ),
                         const Gap(12),
                         TextField(
-
 
                           controller: _nameController,
                           decoration: InputDecoration(
@@ -148,14 +139,13 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
 
                   Positioned(
                     bottom: 12,
-                    // left: 16,
-                    // right: 16,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                       const  Text(
                           'Manzilingiz',
-                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                          style: TextStyle(fontSize: 14,
+                              fontWeight: FontWeight.w600),
                         ),
                         const Gap(12),
                         Container(

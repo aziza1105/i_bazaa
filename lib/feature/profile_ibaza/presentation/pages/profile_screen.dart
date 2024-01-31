@@ -60,16 +60,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: grey_background,
       appBar: AppBar(
+        backgroundColor: dark_grey,
         title: Center(
             child: Text(
               "Profil ma’lumotlari",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            )),
+              style: TextStyle(fontSize: 16,
+                  fontWeight: FontWeight.w700,
+              color: black),
+            )
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
@@ -87,29 +92,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     color: Colors.white,
                   ),
                 ),
-                Positioned(
-                  top: 16,
+                Positioned(top: 16,
                   child: Container(
-                    height: 72,
-                    width: 72,
-                    clipBehavior: Clip.hardEdge,
+                    height: 72, width: 72, clipBehavior: Clip.hardEdge,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.transparent,
-                      border: Border.all(width: 1, color: Colors.grey),
+                      border: Border.all(width: 1,
+                          color: Colors.grey)
                     ),
-                    child: avatar == null
-                        ? const Icon(Icons.person, size: 60, color: Colors.grey)
-                        : Image.file(avatar!, fit: BoxFit.cover,),
+                    child: avatar == null ? const Icon(Icons.person,
+                        size: 60,
+                        color: Colors.grey) : Image.file(avatar!,
+                      fit: BoxFit.cover,),
                   ),
                 ),
-                Positioned(
-                  top: 12,
-                  right: 12,
+                Positioned(top: 12, right: 12,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ProfileEditScreen()),
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => EditingProfileScreen()),
                       );
                     },
                     child: SvgPicture.asset(AppIcons.edit_profile),
@@ -121,18 +122,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('F.I.Sh', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: dark_grey)),
-                      Text(_name,style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
-                      SizedBox(height: 16,),
-                      Text('Manzilingiz', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: dark_grey)),
-                      Text(_location, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
-                      // Add more Text widgets as needed
+                      const Text('F.I.Sh',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: dark_grey)
+                      ),
+                      Text(_name,style:
+                      const TextStyle(fontSize: 17,
+                          fontWeight: FontWeight.w600)
+                      ),
+
+                     const SizedBox(height: 16,),
+
+                     const Text('Manzilingiz',
+                          style: TextStyle(fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: dark_grey)),
+                      Text(_location, style:
+                      const TextStyle(fontSize: 17,
+                              fontWeight: FontWeight.w600)),
                     ],
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 16),
+
             Container(
               height: 76,
               width: double.infinity,
@@ -148,8 +164,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       MaterialPageRoute(builder: (context) => LoginScreen()),
                     );
                   },
-                  child: Center(
-                    child: Row(
+                  child:  Center(
+                    child:  Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset(AppIcons.exit, height: 24, width: 24,),
@@ -157,12 +173,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: TextStyle(color: Colors.red,
                                 fontWeight: FontWeight.w600,
                             fontSize: 14) ),
-
                       ],
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-
                     backgroundColor: pink_background,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
