@@ -58,7 +58,10 @@ const grey = Color(0xFFD5D5D5);
 const dark_grey = Color(0xFF9E9EA5);
 const borderColour = Color(0xFFF2F3F5);
 const yellow = Color(0xFFFFE054);
-const surveyClour = Color(0xFFF2F3F5);
+const surveyColour = Color(0xFFF2F3F5);
+const pink_background = Color(0xFFFFEEEE);
+const grey_background = Color(0xFFF5F8FC);
+const yellow_button = Color(0xFFF0CB23);
 
 
 

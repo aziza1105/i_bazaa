@@ -6,11 +6,11 @@ import 'package:i_bazaa/feature/authentication_ibaza/presentation/pages/register
 import 'package:i_bazaa/feature/authentication_ibaza/presentation/pages/reset_password.dart';
 import 'package:i_bazaa/feature/authentication_ibaza/presentation/pages/reset_password_new.dart';
 import 'package:i_bazaa/feature/authentication_ibaza/presentation/pages/verification.dart';
+import 'package:i_bazaa/feature/profile_ibaza/presentation/pages/profile_screen.dart';
 
 import '../../core/pages/splash_screen.dart';
 
 import '../../feature/authentication_ibaza/presentation/pages/login.dart';
-import '../../feature/authentication_ibaza/presentation/pages/myHomePage.dart';
 import '../../feature/authentication_ibaza/presentation/widgets/survey/survey_first.dart';
 import 'errorPage.dart';
 
@@ -29,13 +29,17 @@ class RouteGenerator {
 
     case "/survey":
     return MaterialPageRoute(builder: (context) => const SurveyPage());
-    case '/home':
-    return MaterialPageRoute(
-    builder: (context) =>  MyHomePage(),
-    );
+    // case '/home':
+    // return MaterialPageRoute(
+    // builder: (context) =>  MyHomePage(),
+    // );
     case '/login':
     return MaterialPageRoute(
     builder: (context) => const LoginScreen(),);
+    case '/profile':
+        return MaterialPageRoute(
+          builder: (context) =>  ProfileScreen(),
+        );
     case "/forgotPassword":
     return MaterialPageRoute(
     builder: (context) => const ForgotPassword());

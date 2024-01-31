@@ -121,7 +121,7 @@ class _SurveyPageState extends State<SurveyPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: surveyClour,
+        backgroundColor: surveyColour,
         body: PageView(
           onPageChanged: (value) {
             thisPage = value;

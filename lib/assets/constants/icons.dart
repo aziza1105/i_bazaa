@@ -9,6 +9,9 @@ sealed class AppIcons {
   static const edit = '${_icons}Edit.svg';
   static const flag = '${_icons}flag.svg';
   static const arrow_line = '${_icons}arrow_line.svg';
+  static const exit = '${_icons}exit.svg';
+  static const edit_icon = '${_icons}edit_icon.svg';
+  static const edit_profile = '${_icons}edit_profile.svg';
 
 
 

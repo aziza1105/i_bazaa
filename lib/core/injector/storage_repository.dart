@@ -1,35 +1,34 @@
-import 'package:hive/hive.dart';
-import 'package:path_provider/path_provider.dart' as path_provider;
-
-class HiveSingleton {
-  static HiveSingleton? _instance;
-  static late Box _box;
 
 
-  HiveSingleton._();
+import 'package:shared_preferences/shared_preferences.dart';
 
+class StorageRepository{
+  static StorageRepository? _repository;
+  static SharedPreferences? _preferences;
+  static Future<StorageRepository?> getInstance() async{
 
-  static Future<HiveSingleton> getInstance() async {
-    if (_instance == null) {
-      _instance = HiveSingleton._();
-      await _instance!._init();
+    if(_repository == null){
+      final store = StorageRepository._();
+      await store._init();
+      _repository = store;
     }
-    return _instance!;
+
+    return _repository;
+  }
+  StorageRepository._();
+
+  Future _init() async{
+    _preferences = await SharedPreferences.getInstance();
+
   }
 
-  Future _init() async {
-    final appDocumentDir =
-        await path_provider.getApplicationDocumentsDirectory();
-    Hive.init(appDocumentDir.path);
-    await Hive.openBox('aziza');
-    _box = Hive.box('aziza');
+  static bool getAuthStatus(){
+    return _preferences?.getBool("isAuthenticated") ?? false;
   }
 
-  static bool getAutStatus() {
-    return _box.get('IsAuthenticated') ?? false;
+  static Future<bool?> setAuthStatus(bool value)async{
+    return await _preferences?.setBool('isAuthenticated', value);
   }
 
-  static Future<void> setAuthStatus(bool value) async {
-    await _box.put('IsAuthenticated', value);
-  }
+  static setStatus(bool bool) {}
 }

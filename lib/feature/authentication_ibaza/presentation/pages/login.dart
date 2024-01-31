@@ -1,6 +1,9 @@
+
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../../assets/constants/colors.dart';
 import '../../../../assets/constants/icons.dart';
@@ -14,12 +17,20 @@ class LoginScreen extends StatefulWidget {
   );
 
   const LoginScreen({super.key});
-
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
-
 class _LoginScreenState extends State<LoginScreen> {
+  File? avatar;
+  Future<void> pickerAvatar() async {
+    ImagePicker imagePicker = ImagePicker();
+    final file = await imagePicker.pickImage(source: ImageSource.gallery);
+    if (file != null) {
+      setState(() {
+        avatar = File.fromUri(Uri.file(file.path));
+      });
+    }
+  }
   final phoneTextEditingController = TextEditingController();
   final passwordTextEditingController = TextEditingController();
 
@@ -220,10 +231,13 @@ class _LoginScreenState extends State<LoginScreen> {
             const Gap(20),
 
             WButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed("/profile");
+
+              },
               text: 'Kirish',
             ),
-            const Gap(200),
+            const Gap(230),
             Align(
               alignment: Alignment.center,
               child: Text(
